@@ -26,7 +26,6 @@ console.log(gaseosasPomelo);
 
 // hago arrays para especificar que marca quiere el usuario
 const arrayGaseosasCola = ["Cocacola","Pepsi","Manaos","La bichy"]
-console.log(arrayGaseosasCola);
 const arrayGaseosasNaranja = ["Fanta","Manaos","Crush"]
 const arrayGaseosasPomelo = ["Crush","Schweppes","Manaos","Secco"]
 
@@ -44,39 +43,43 @@ switch (opcionIngresada) {
     case 1:
         Gaseosas();
         console.log(gaseosasCola);
+        arrayCola();
         break
 
         case 2:
             Gaseosas();
             console.log(gaseosasNaranja);
+            arrayNaranja();
             break
 
             case 3:
                 Gaseosas();
                 console.log(gaseosasPomelo);
+                arrayPomelo();
                 break
-
             case 0:
                 console.log(`Gracias por utilizar nuestra tienda de gaseosas, vuelva prontos`);
                 salirMenu = true;
                 break
 
                 default:
-                    alert (`opción invalida`)
+                    alert (`opción invalida`);
 
 
                     
-    } function menu2(){
-if ( opcionIngresada == 1){
-
+    } 
+}while (!salirMenu)
+}  
+menu()
+  
+function arrayCola(){
     let opcionIngresada2 =  parseInt( prompt (`Porfavor ingrese que marca de gaseosa Cola, desea comprar:
     1 - Coca cola
     2 - Pepsi
     3 - Manaos
-    4-  La bichy`))
+    4 - La bichy`))
 switch (opcionIngresada2) {
 case 1: 
-     
     console.log(arrayGaseosasCola[0]);
     break
 case 2:
@@ -90,16 +93,46 @@ case 4:
     break
 default:
     alert ("opción invalida")}
-
-
-
 }
+   
+function arrayNaranja(){
+    let opcionIngresada3 =  parseInt( prompt (`Porfavor ingrese que marca de gaseosa Cola, desea comprar:
+    1 - Fanta
+    2 - Manaos
+    3 - Crush`))
+switch (opcionIngresada3) {
+case 1: 
+    console.log(arrayGaseosasNaranja[0]);
+    break
+case 2:
+    console.log(arrayGaseosasNaranja[1]);
+    break
+case 3:
+    console.log(arrayGaseosasNaranja[2]);
+    break
+default:
+    alert ("opción invalida")}
 }
-    
-}while (!salirMenu)
-}    
-menu()
-menu2()
 
-  
-    
+function arrayPomelo(){
+    let opcionIngresada3 =  parseInt( prompt (`Porfavor ingrese que marca de gaseosa Cola, desea comprar:
+    1 - Crush
+    2 - Schweppes
+    3 - Manaos
+    4 - Secco`))
+switch (opcionIngresada3) {
+case 1: 
+console.log(arrayGaseosasPomelo[0]);
+break
+case 2:
+    console.log(arrayGaseosasPomelo[1]);
+    break
+case 3:
+    console.log(arrayGaseosasPomelo[2]);
+    break
+case 4:
+    console.log(arrayGaseosasPomelo[3]);
+    break
+default:
+    alert ("opción invalida")}
+}
