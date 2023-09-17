@@ -24,12 +24,13 @@ console.log(gaseosasNaranja);
 const gaseosasPomelo = new Gaseosas ("Crush", "Schweppes", "Manaos", "Secco");
 console.log(gaseosasPomelo);
 
-// hago arrays para especificar que marca quiere el usuario
-const arrayGaseosasCola = ["Cocacola","Pepsi","Manaos","La bichy"]
-const arrayGaseosasNaranja = ["Fanta","Manaos","Crush"]
-const arrayGaseosasPomelo = ["Crush","Schweppes","Manaos","Secco"]
+// hago arrays para especificar que marca quiere el usuario (le especifico el gusto entre parentesis,asi cuando van al carrito, y hay por ejemplo 2 marcas iguales, se puedan diferenciar los gustos :D)
+const arrayGaseosasCola = ["Cocacola(cola)","Pepsi(cola)","Manaos(cola)","La bichy(cola)"]
+const arrayGaseosasNaranja = ["Fanta(naranja)","Manaos(naranja)","Crush(naranja)"]
+const arrayGaseosasPomelo = ["Crush(pomelo)","Schweppes(pomelo)","Manaos(pomelo)","Secco(pomelo)"]
 
-
+// creo este array para guardar todo lo que pidio el cliente
+const carrito = []
 
 function menu() {
     let salirMenu = false
@@ -59,6 +60,8 @@ switch (opcionIngresada) {
                 break
             case 0:
                 console.log(`Gracias por utilizar nuestra tienda de gaseosas, vuelva prontos`);
+
+                console.log( `Usted a comprado estas gaseosas: ${carrito}` );
                 salirMenu = true;
                 break
 
@@ -73,49 +76,56 @@ switch (opcionIngresada) {
 menu()
   
 function arrayCola(){
-    let opcionIngresada2 =  parseInt( prompt (`Porfavor ingrese que marca de gaseosa Cola, desea comprar:
-    1 - Coca cola
-    2 - Pepsi
-    3 - Manaos
-    4 - La bichy`))
+    let opcionIngresada2 =  parseInt( prompt (`Porfavor ingrese que marca de gaseosa gusto "Cola", desea comprar:
+    1 - Coca cola 
+    2 - Pepsi 
+    3 - Manaos 
+    4 - La bichy  `))
 switch (opcionIngresada2) {
 case 1: 
     console.log(arrayGaseosasCola[0]);
+    carrito.push(arrayGaseosasCola[0]);
     break
 case 2:
     console.log(arrayGaseosasCola[1]);
+    carrito.push(arrayGaseosasCola[1]);
     break
 case 3:
     console.log(arrayGaseosasCola[2]);
+    carrito.push(arrayGaseosasCola[2]);
     break
 case 4:
     console.log(arrayGaseosasCola[3]);
+    carrito.push(arrayGaseosasCola[3]);
     break
 default:
     alert ("opción invalida")}
 }
    
 function arrayNaranja(){
-    let opcionIngresada3 =  parseInt( prompt (`Porfavor ingrese que marca de gaseosa Cola, desea comprar:
+    let opcionIngresada3 =  parseInt( prompt (`Porfavor ingrese que marca de gaseosa gusto "Naranja", desea comprar:
     1 - Fanta
     2 - Manaos
     3 - Crush`))
 switch (opcionIngresada3) {
 case 1: 
     console.log(arrayGaseosasNaranja[0]);
+    carrito.push(arrayGaseosasNaranja[0]);
     break
 case 2:
     console.log(arrayGaseosasNaranja[1]);
+    carrito.push(arrayGaseosasNaranja[1]);
     break
 case 3:
     console.log(arrayGaseosasNaranja[2]);
+    carrito.push(arrayGaseosasNaranja[2]);
     break
 default:
     alert ("opción invalida")}
 }
 
 function arrayPomelo(){
-    let opcionIngresada3 =  parseInt( prompt (`Porfavor ingrese que marca de gaseosa Cola, desea comprar:
+    let opcionIngresada3 =  parseInt( prompt (`Porfavor ingrese que marca de gaseosa gusto "Pomelo", desea comprar:
     1 - Crush
     2 - Schweppes
     3 - Manaos
@@ -123,15 +133,19 @@ function arrayPomelo(){
 switch (opcionIngresada3) {
 case 1: 
 console.log(arrayGaseosasPomelo[0]);
+carrito.push(arrayGaseosasPomelo[0]);
 break
 case 2:
     console.log(arrayGaseosasPomelo[1]);
+    carrito.push(arrayGaseosasPomelo[1]);
     break
 case 3:
     console.log(arrayGaseosasPomelo[2]);
+    carrito.push(arrayGaseosasPomelo[2]);
     break
 case 4:
     console.log(arrayGaseosasPomelo[3]);
+    carrito.push(arrayGaseosasPomelo[3]);
     break
 default:
     alert ("opción invalida")}
